@@ -1,0 +1,23 @@
+body {
+  background-color: #0c0e13;
+}
+
+header.ant-layout-header.app-header {
+  background-color: #0c0e13;
+  padding-inline: 0px;
+}
+
+section.ant-layout.ant-layout-has-sider.app-main {
+  background-color: #0c0e13;
+  height: calc(100vh - 64px);
+}
+
+main.ant-layout-content.app-content {
+  background-color: #1d1c21;
+  height: 97%;
+  margin-right: 20px;
+}
+
+.ant-layout .ant-layout-sider {
+  background-color: #0c0e13;
+}

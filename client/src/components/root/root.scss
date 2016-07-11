@@ -1,0 +1,63 @@
+.root-main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    color: #fff;
+  }
+}
+
+.input {
+  display: flex;
+}
+
+.text-input {
+  display: block;
+  width: 200px;
+  height: 38px;
+  padding: 8px 12px;
+  margin-right: 15px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border: 1px solid #7b798f;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+
+  &:active,
+  &:focus {
+    border: 1px solid #00d9f5;
+  }
+}
+
+.submit-input {
+  width: 100px;
+  min-height: 3.25rem;
+  margin-right: 0;
+  padding-right: 44px;
+  padding-left: 44px;
+  border-radius: 34px;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#00f5a0),
+    to(#00d9f5)
+  );
+  background-image: linear-gradient(90deg, #00f5a0, #00d9f5);
+  font-family: Inter, sans-serif;
+  color: #000;
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 700;
+  display: inline-block;
+  padding: 9px 15px;
+  background-color: #3898ec;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+}

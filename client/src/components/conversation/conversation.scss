@@ -1,0 +1,146 @@
+.conversation {
+  flex-direction: column;
+  max-width: 400px;
+  min-width: 360px;
+  width: 30%;
+  display: flex;
+  height: 100%;
+  position: relative;
+  text-align: initial;
+
+  .conversation-header {
+    border-bottom: 1px solid #3c3b42;
+    display: flex;
+    align-items: center;
+    height: 65px;
+
+    .conversation-back-btn {
+      background-color: transparent;
+      border-color: transparent;
+      color: #929699;
+    }
+
+    p {
+      font-size: 18px;
+      color: #929699;
+    }
+  }
+
+  .conversation-header-input {
+    border-radius: 0;
+    border-color: transparent !important;
+    height: 64px;
+    background-color: #1d1c21;
+    font-size: 16px;
+
+    .anticon-search {
+      color: #929699;
+    }
+
+    input.ant-input {
+      background-color: #1d1c21;
+      color: #929699;
+    }
+
+    input::placeholder {
+      color: #929699;
+      font-weight: 500;
+    }
+  }
+
+  .conversation-header-btn {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: #929699 !important;
+    margin-right: 20px;
+
+    span.anticon.anticon-plus-square {
+      font-size: 20px;
+    }
+  }
+
+  .conversation-list {
+    padding-top: 10px;
+
+    .conversation-item {
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      height: 64px;
+      line-height: 17px;
+      padding: 0 20px;
+      width: 100%;
+
+      &:hover,
+      &.conversation-item-active {
+        background-color: #26252d;
+      }
+    }
+
+    .avatar .ant-badge {
+      box-shadow: none;
+    }
+
+    .content {
+      width: 86%;
+      padding-left: 18px;
+
+      .title {
+        color: #c8c7d0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .time {
+        color: #7a798f;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+
+    .last-message {
+      color: #7a798f;
+      font-size: 12px;
+      display: flex;
+      padding: 2px 0;
+    }
+  }
+
+  .conversation-create-user-select {
+    .create-group-btn {
+      background: transparent;
+      width: 100%;
+      border-color: transparent;
+      padding: 10px;
+      color: #fff;
+      text-align: left;
+      height: 50px;
+
+      &:hover {
+        color: #029d70;
+      }
+    }
+    .user-container {
+      label {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        padding: 10px;
+        text-align: center;
+
+        &:hover {
+          background-color: #26252d;
+        }
+      }
+
+      .user-name {
+        color: #fff;
+        margin-left: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.sider {
+  .ant-menu.ant-menu-dark {
+    margin-top: 64px;
+    background-color: #0c0e13;
+  }
+
+  .ant-menu .ant-menu-item-divider {
+    border-color: #26252d;
+    margin: 20px 16px;
+  }
+
+  li.ant-menu-item.ant-menu-item-only-child {
+    margin: 16px 4px;
+    height: 45px;
+    padding-inline: 0;
+  }
+
+  .ant-menu-dark .ant-menu-item-selected {
+    background-color: transparent;
+    color: #029d70;
+
+    .avatar {
+      background-color: #fff;
+      color: #26252e;
+    }
+  }
+
+  span.ant-menu-title-content {
+    font-size: 16px;
+  }
+
+  .ant-menu-dark:not(.ant-menu-horizontal)
+    .ant-menu-item:not(.ant-menu-item-selected):active {
+    background-color: transparent;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #26252e;
+    margin-right: 15px;
+  }
+}

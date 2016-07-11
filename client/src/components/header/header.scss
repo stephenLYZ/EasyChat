@@ -1,0 +1,73 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding-inline: 18px;
+
+  .header-left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    span {
+      color: #fff;
+      font-weight: 500;
+      width: 240px;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    color: #929699;
+
+    .header-input {
+      height: 32px;
+      width: 130px;
+      border-color: #26252d;
+      border-radius: 10px;
+      background-color: #26252d;
+
+      .anticon-search {
+        color: #929699;
+      }
+
+      input.ant-input {
+        background-color: #26252d;
+        color: #929699;
+      }
+
+      input::placeholder {
+        color: #929699;
+        font-weight: 500;
+      }
+    }
+
+    .header-time {
+      margin-left: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+
+      .global {
+        margin-right: 5px;
+        font-size: 18px;
+      }
+    }
+
+    .bell {
+      margin: 0 7px 0 14px;
+      font-size: 18px;
+    }
+    
+    .questionCircle {
+      margin: 0 14px 0 7px;
+      font-size: 18px;
+    }
+
+    .avatar {
+      border-color: #929699;
+    }
+  }
+}
