@@ -4,9 +4,6 @@
 ## Features
 
 
-<img width="1791" alt="WeChat1e15a47e5a44cd50acc5ee7b755ee240" src="https://user-images.githubusercontent.com/11830681/218860144-8325b718-120d-4ca0-99c3-606ef30da117.png">
-
-
 
 https://user-images.githubusercontent.com/11830681/218868427-e2de3aa0-e628-4be1-9a9d-c819faceed69.mov
 
