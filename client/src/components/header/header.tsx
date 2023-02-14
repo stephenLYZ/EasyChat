@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.scss";
-import { Avatar, Input } from "antd";
+import { Avatar, Input, Tooltip } from "antd";
 import {
   BellOutlined,
   GlobalOutlined,
@@ -30,12 +30,14 @@ export function Header() {
         </div>
         <BellOutlined className="bell" />
         <QuestionCircleOutlined className="questionCircle" />
-        <Avatar
-          className="avatar"
-          size={32}
-          icon={<UserOutlined />}
-          src={myProfile?.avatar || null}
-        />
+        <Tooltip placement="bottom" title={myProfile?.name}>
+          <Avatar
+            className="avatar"
+            size={32}
+            icon={<UserOutlined />}
+            src={myProfile?.avatar || null}
+          />
+        </Tooltip>
       </div>
     </div>
   );

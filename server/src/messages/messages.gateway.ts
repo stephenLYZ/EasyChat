@@ -51,7 +51,9 @@ export class MessagesGateway {
       conversation.messages.push(messageData);
       await conversation.save();
     }
-    console.log(messageData);
     this.server.in(message.conversationID).emit('receiveMessage', messageData);
+    this.server
+      .in(message.conversationID)
+      .emit('updateLastMessage', messageData);
   }
 }

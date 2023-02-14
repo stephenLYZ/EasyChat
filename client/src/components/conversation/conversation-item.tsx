@@ -35,7 +35,7 @@ export function ConversationItem({ conversation }: IConversationItemProps) {
     setDisplayImage(getDisplayImage(conversation));
     setDisplayTime(getDisplayTime(conversation));
     setUnread(conversation.unreadCount);
-  }, [conversation]);
+  }, [JSON.stringify(conversation), myProfile]);
 
   const conversationItemButton = useRef<HTMLButtonElement | null>(null);
 

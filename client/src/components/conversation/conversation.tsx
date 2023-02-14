@@ -1,8 +1,8 @@
-import react, { useLayoutEffect, useState } from "react";
+import react, { useLayoutEffect, useMemo, useState } from "react";
 import "./conversation.scss";
 import { Button, Input } from "antd";
 import { PlusSquareOutlined, SearchOutlined } from "@ant-design/icons";
-import { Conversation as IConversation, Profile } from "../../types";
+import { Conversation as IConversation, Message, Profile } from "../../types";
 import { ConversationItem } from "./conversation-item";
 import { getConversationList } from "../../api/data-provider";
 import { ConversationCreate } from "./conversation-create";
@@ -55,52 +55,63 @@ export function Conversation() {
         setConversationList(newConversationList);
       }
     };
+    const handleUpdateLastMessage = (message: Message) => {
+      const conversationID = message.conversationID;
+      const index = conversationList.findIndex((c) => c._id === conversationID);
+      if (index > -1) {
+        const newConversationList = conversationList.slice();
+        const conversation = newConversationList[index];
+        conversation.lastMessage = {
+          messageForShow: (message.payload as any).text,
+          name: message.sender.name,
+          lastTime: message.time,
+        };
+        setConversationList(newConversationList);
+      }
+    };
     socket.on("updateConversationList", handleUpdateConversationList);
-    return () =>
+    socket.on("updateLastMessage", handleUpdateLastMessage);
+    return () => {
       socket.off("updateConversationList", handleUpdateConversationList);
+      socket.off("updateLastMessage", handleUpdateLastMessage);
+    };
   }, [conversationList, myProfile?._id, socket]);
 
   const handleSearchChange = (e: any) => {
     setSearchValue(e.target?.value);
   };
 
-  const renderConversationList = () => (
-    <>
-      <div className="conversation-header">
-        <Input
-          value={searchValue}
-          onChange={handleSearchChange}
-          placeholder="Search"
-          prefix={<SearchOutlined />}
-          className="conversation-header-input"
-        />
-        <Button
-          icon={<PlusSquareOutlined />}
-          className="conversation-header-btn"
-          onClick={() => setConversationCreated(true)}
-        />
-      </div>
-
-      <div className="conversation-list">
-        {conversationList.map((item) => (
-          <ConversationItem conversation={item} />
-        ))}
-      </div>
-    </>
-  );
-
-  const renderConversationCreate = () => (
-    <ConversationCreate
-      setConversationCreated={setConversationCreated}
-      setConversationList={setConversationList}
-    />
-  );
-
   return (
     <div className="conversation">
-      {conversationCreated
-        ? renderConversationCreate()
-        : renderConversationList()}
+      {conversationCreated ? (
+        <ConversationCreate
+          setConversationCreated={setConversationCreated}
+          setConversationList={setConversationList}
+        />
+      ) : (
+        <>
+          <div className="conversation-header">
+            <Input
+              value={searchValue}
+              onChange={handleSearchChange}
+              placeholder="Search"
+              prefix={<SearchOutlined />}
+              className="conversation-header-input"
+            />
+            <Button
+              icon={<PlusSquareOutlined />}
+              className="conversation-header-btn"
+              onClick={() => setConversationCreated(true)}
+            />
+          </div>
+
+          <div className="conversation-list">
+            {conversationList.map((item) => (
+              <ConversationItem conversation={item} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }

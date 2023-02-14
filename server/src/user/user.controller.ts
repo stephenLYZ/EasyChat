@@ -88,7 +88,12 @@ export class UserController {
         const lastMessage = await this.messagesModel.findOne(
           data.messages[data.messages.length - 1],
         );
-        result.lastMessage = lastMessage;
+        const user = await this.userModel.findOne({ _id: lastMessage.sender });
+        result.lastMessage = {
+          messageForShow: (lastMessage.payload as any).text,
+          name: user.name,
+          lastTime: lastMessage.time,
+        };
       }
       conversations.push(result);
     }
