@@ -27,6 +27,7 @@
     "@nestjs/mongoose": "^9.2.1",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/platform-socket.io": "^9.3.6",
+    "@nestjs/websockets": "^9.3.9",
     "apollo-server-express": "^3.11.1",
     "express-jwt": "^8.4.1",
     "graphql": "^16.6.0",
